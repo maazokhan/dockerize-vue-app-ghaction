@@ -19,10 +19,10 @@ jobs:
           node-version: 14
 
       - name: Install Dependencies
-        #run: npm install
+        run: npm install
 
       - name: Build Vue.js Project
-        #run: npm run build
+        run: npm run build
 
       - name: Upload to S3
         uses: jakejarvis/s3-sync-action@master
