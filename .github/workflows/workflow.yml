@@ -33,4 +33,4 @@ jobs:
         uses: jakejarvis/s3-sync-action@master
         with:
           #args: --acl public-read --delete --exclude 'node_modules/*' --include 'dist/' s3://${{ env.AWS_S3_BUCKET }}/
-          args: --acl public-read --delete --exclude 'node_modules/*' --include 'dist/' AWS_S3_BUCKET /
+          args: --acl public-read --delete --exclude 'node_modules/*' --include 'dist/' AWS_S3_BUCKET
