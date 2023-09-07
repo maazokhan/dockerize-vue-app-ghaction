@@ -19,10 +19,10 @@ jobs:
           node-version: 14
 
       - name: Install Dependencies
-        run: npm install
+        #run: npm install
 
       - name: Build Vue.js Project
-        run: npm run build
+        #run: npm run build
 
       - name: Upload to S3
         uses: jakejarvis/s3-sync-action@master
@@ -30,5 +30,5 @@ jobs:
         with:
           args: --acl public-read --delete --exclude "node_modules/*" dist/ s3://${{ secrets.AWS_S3_BUCKET }}/
         env:
-          AWS_ACCESS_KEY_ID: ASIA3JNGDDAEP4ROHTHC
-          AWS_SECRET_ACCESS_KEY: 5wo7vsrPdIZYR2Hf9x5Dmv/F7sHsMYa/aFTGCO2P
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
