@@ -1,4 +1,4 @@
-name: Build and Push Docker Image
+name: Pushing Docker Image
 
 on:
   push:
@@ -24,4 +24,4 @@ jobs:
       run: docker build -t maazokhan/vue-maaz:latest .
 
     - name: Push the Docker image
-      run: docker push maazokhan/vuemaaz:latest
+      run: docker push maazokhan/vue-maaz:latest
