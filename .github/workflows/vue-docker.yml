@@ -22,7 +22,7 @@ jobs:
 
     - name: Build the Docker image
       run: |
-        IMAGE_NAME= maazokhan/vue-maaz
+        IMAGE_NAME= /maazokhan/vue-maaz
         COMMIT_ID=$(echo $GITHUB_SHA | cut -c1-7)  # Get the first 7 characters of the commit ID
         TAG_NAME="${IMAGE_NAME}:${COMMIT_ID}"
         docker build -t $TAG_NAME .
@@ -30,7 +30,7 @@ jobs:
 
     - name: Push the Docker image
       run: |
-        IMAGE_NAME= maazokhan/vue-maaz
+        IMAGE_NAME= /maazokhan/vue-maaz
         COMMIT_ID=$(echo $GITHUB_SHA | cut -c1-7)  # Get the first 7 characters of the commit ID
         TAG_NAME="${IMAGE_NAME}:${COMMIT_ID}"
         docker push $TAG_NAME
