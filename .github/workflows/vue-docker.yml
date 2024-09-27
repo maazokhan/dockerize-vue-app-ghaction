@@ -25,7 +25,7 @@ jobs:
         IMAGE_NAME= maazokhan/vue-maaz
         COMMIT_ID=$(echo $GITHUB_SHA | cut -c1-7)  # Get the first 7 characters of the commit ID
         TAG_NAME="${IMAGE_NAME}:${COMMIT_ID}"
-        docker build -t $TAG_NAME .
+        docker build -t $TAG_NAME -f docker-vue-app-ghaction/Dockerfile docker-vue-app-ghaction/
 
 
     - name: Push the Docker image
