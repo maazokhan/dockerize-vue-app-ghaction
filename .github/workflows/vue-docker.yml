@@ -21,7 +21,7 @@ jobs:
         password: ${{ secrets.DOCKER_PASSWORD }}
 
     - name: Build the Docker image
-      run: docker build -t maazokhan/vue-maaz:latest .
+      run: docker build -t maazokhan/vue-maaz:${{ github.sha }} .
 
     - name: Push the Docker image
-      run: docker push maazokhan/vue-maaz:latest 
+      run: docker push maazokhan/vue-maaz:${{ github.sha }}
